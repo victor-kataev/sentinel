@@ -39,7 +39,7 @@ struct Message
     Message(const uint8_t* p, size_t l): m_len(l)
     {
         int last = l / 8;
-        m_payload = new uint8_t[last];
+        m_payload = new uint8_t[last+1];
         for(int i = 0; i <= last; i++)
             m_payload[i] = p[i];
     }
@@ -92,7 +92,10 @@ bool CSentinelHacker::SeqSolve( const vector<uint64_t> & fragments,
     return true;
 }
 
-void CSentinelHacker::AddTransmitter                ( ATransmitter      x ){}
+void CSentinelHacker::AddTransmitter                ( ATransmitter      x )
+{
+
+}
 void CSentinelHacker::AddReceiver                   ( AReceiver         x ){}
 void CSentinelHacker::AddFragment                   ( uint64_t          x ){}
 void CSentinelHacker::Start                         ( unsigned          thrCount ){}
